@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>배우등록</h1>        
+        <a id = "home" href="/">홈으로</a>
+    
+    <table>
+        
+        <tr>
+            <td>배우이름</td>
+            <td ><input id="id = "naverName"" type="text"></td>
+        </tr>
+        <tr>
+            <td>배우직업</td>
+            <td ><input id="naverJop" type="text"></td>
+        </tr>
+        <tr>
+            <td>배우생년월일</td>
+            <td><input  id="naverDate" type="text"></td>
+        </tr>
+        <tr>
+            <td>배우필모</td>
+            <td><input id ="naverFilmography" type="text"></td>
+        </tr>
+    </table>
+    <button id="register-btn">등록</button>
+    <button id="cancel-btn">취소</button>
+    <script>
+        $('#register-btn').click(e=>{
+            e.preventDefault()
+            alert('등록버튼 클릭')
+            
+            $.ajax({
+                url:'/naver/',
+                type:'POST',
+                data:JSON.stringify({
+
+                }),
+                dataType:'json',
+                contentType:'application/json',
+                success: d=>{
+                    
+                    alert('등록성공')
+                    location.href = '/move/naver/naver_actor'
+                },
+                error: e=>{
+                    alert(`에러발생 ${e}`)
+                    location.href = '/move/naver/naver_register'
+                }
+            })
+        })
+        $("#cancel-btn").click(e=>{
+            e.preventDefault()
+            alert('취소버튼 클릭')
+        })
+    </script>
+
+    
+</body>
+</html>

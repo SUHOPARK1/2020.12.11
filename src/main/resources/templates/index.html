@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    Home<br>
+    <a id="crawling" href="#">웹 크롤링</a><br>
+    <a id="register" href="#">배우 등록</a><br>
+    <a id="actor" href="#">배우 명단</a><br>
+
+    <script>
+        $("#crawling").click(e=>{
+            location.href='/move/naver/naver_crawling'
+        })
+        $("#register").click(e=>{
+            location.href='/move/naver/naver_register'
+        })
+        $("#actor").click( e=>{
+            location.href='/move/naver/naver_actor'
+        })
+    </script>
+
+</body>
+
+    
+</html>
